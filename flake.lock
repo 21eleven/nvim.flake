@@ -1,0 +1,100 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "neovim": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "contrib",
+        "lastModified": 1685359478,
+        "narHash": "sha256-G51qD7GklEn0JrneKSSqDDx0Odi7W2FjdQc0ZDE9ZK4=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "7d4bba7aa7a4a3444919ea7a3804094c290395ef",
+        "type": "github"
+      },
+      "original": {
+        "dir": "contrib",
+        "owner": "neovim",
+        "ref": "stable",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1691347253,
+        "narHash": "sha256-SLRRzZM0cPKnrmAdTewNPGp8AkThUBNprCgAYV6I6Aw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ecc99ae51538f9f98a2c2fa3eb6f5e4af1a41b1f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "neovim": "neovim",
+        "nixpkgs": "nixpkgs",
+        "rosepine-src": "rosepine-src",
+        "telescope-recent-files-src": "telescope-recent-files-src"
+      }
+    },
+    "rosepine-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690578248,
+        "narHash": "sha256-bzh6X1pJPe2CM5qDTvadGHD55COTtri+OWzIFlJv9qU=",
+        "owner": "rose-pine",
+        "repo": "neovim",
+        "rev": "e29002cbee4854a9c8c4b148d8a52fae3176070f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "telescope-recent-files-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668872770,
+        "narHash": "sha256-RSbB+fODF7o+n1aF9rYKP4ANPkyxQgi+3ZymTFd2BMI=",
+        "owner": "smartpde",
+        "repo": "telescope-recent-files",
+        "rev": "6893cda11625254cc7dc2ea76e0a100c7deeb028",
+        "type": "github"
+      },
+      "original": {
+        "owner": "smartpde",
+        "repo": "telescope-recent-files",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
