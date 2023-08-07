@@ -58,11 +58,11 @@
       "inputs": {
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
-        "rosepine-src": "rosepine-src",
+        "rose-pine-src": "rose-pine-src",
         "telescope-recent-files-src": "telescope-recent-files-src"
       }
     },
-    "rosepine-src": {
+    "rose-pine-src": {
       "flake": false,
       "locked": {
         "lastModified": 1690578248,

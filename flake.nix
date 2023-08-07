@@ -1,21 +1,5 @@
 {
   description = "21eleven nvim flake";
-  # inputs = {
-  #   nixpkgs = { url = "github:NixOs/nixpkgs"; };
-  #   neovim = {
-  #     url = "github:neovim/neovim/stable"; 
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #   };
-  # };
-  # outputs = { self, nixpkgs, neovim }: {
-  #   # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-  #   # packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-  #   package.x86_64-linux.default = nixpkgs.packages.x86_64-linux.neovim;
-  #   apps.x86_64-linux.default = {
-  #     type = "app";
-  #     program = "${nixpkgs.packages.x86_64-linux.neovim}/bin/nvim";
-  #   };
-  # };
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs";
@@ -28,12 +12,12 @@
       url = "github:smartpde/telescope-recent-files";
       flake = false;
     };
-    rosepine-src = {
+    rose-pine-src = {
       url = "github:rose-pine/neovim";
       flake = false;
     };
   };
-  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rosepine-src }:
+  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src }:
     let
       overlayFlakeInputs = prev: final: {
         neovim = neovim.packages.x86_64-linux.neovim;
@@ -42,8 +26,8 @@
             src = telescope-recent-files-src;
             pkgs = prev;
           };
-          rosepine = import ./packages/vimPlugins/rosepine.nix {
-            src = rosepine-src;
+          rose-pine = import ./packages/vimPlugins/rose-pine.nix {
+            src = rose-pine-src;
             pkgs = prev;
           };
         };
@@ -57,7 +41,8 @@
         system = "x86_64-linux";
         overlays = [ overlayFlakeInputs overlayNvim ];
       };
-    in {
+    in
+    {
       packages.x86_64-linux.default = pkgs.nvim;
       apps.x86_64-linux.default = {
         type = "app";

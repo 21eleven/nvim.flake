@@ -1,5 +1,5 @@
 { pkgs, src }:
 pkgs.vimUtils.buildVimPlugin {
-  name = "telescope-recent-files";
+  name = "rose-pine";
   inherit src;
 }
