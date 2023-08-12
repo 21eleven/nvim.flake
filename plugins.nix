@@ -24,6 +24,7 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   cmp-nvim-ultisnips
   cmp-emoji
+  comment-nvim
   lualine-nvim
   lsp-status-nvim
   telescope-nvim

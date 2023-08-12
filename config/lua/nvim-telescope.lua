@@ -6,3 +6,4 @@ vim.api.nvim_set_keymap("n", "<leader>ff", ":lua require('telescope.builtin').fi
 vim.api.nvim_set_keymap("n", "<leader>fr", ":lua require('telescope').extensions.recent_files.pick()<CR>", opt)
 vim.api.nvim_set_keymap("n", "<leader>fh", ":lua require('telescope.builtin').command_history()<CR>", opt)
 vim.api.nvim_set_keymap("n", "<leader>ft", ":lua require('telescope.builtin').builtin()<CR>", opt)
+vim.api.nvim_set_keymap("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>", opt)
