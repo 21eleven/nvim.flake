@@ -2,6 +2,7 @@
 with pkgs; [
   ripgrep
   stylua
+  lua-language-server
   # nix
   statix
   rnix-lsp

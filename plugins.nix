@@ -17,6 +17,12 @@ with pkgs.vimPlugins; [
     ]
   ))
   vim-fugitive
+  auto-session
+  nvim-web-devicons
+  bufferline-nvim
+  dracula-nvim
+  catppuccin-nvim
+  tokyonight-nvim
   nvim-cmp
   cmp-nvim-lsp
   cmp-buffer
@@ -24,11 +30,21 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   cmp-nvim-ultisnips
   cmp-emoji
+  cmp_luasnip
+  luasnip
+  indent-blankline-nvim
+  which-key-nvim
+  neo-tree-nvim
+  plenary-nvim
+  nui-nvim
+  no-neck-pain-nvim
+  rust-tools-nvim
   comment-nvim
   lualine-nvim
   lsp-status-nvim
   telescope-nvim
   rose-pine
+  bufdelete-nvim
   harpoon
   nvim-lspconfig
   telescope-recent-files

@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bufdelete-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1688027130,
+        "narHash": "sha256-UubYRfRAXZ89WOc3QFMvAMjNjLW6bV4nDgSa1CRZkIM=",
+        "owner": "21eleven",
+        "repo": "bufdelete.nvim",
+        "rev": "07d1f8ba79dec59d42b975a4df1c732b2e4e37b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "21eleven",
+        "repo": "bufdelete.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1667395993,
@@ -56,6 +72,7 @@
     },
     "root": {
       "inputs": {
+        "bufdelete-src": "bufdelete-src",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "rose-pine-src": "rose-pine-src",

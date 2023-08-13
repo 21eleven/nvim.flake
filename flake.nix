@@ -16,8 +16,12 @@
       url = "github:rose-pine/neovim";
       flake = false;
     };
+    bufdelete-src = {
+      url = "github:21eleven/bufdelete.nvim";
+      flake = false;
+    };
   };
-  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src }:
+  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src, bufdelete-src }:
     let
       overlayFlakeInputs = prev: final: {
         neovim = neovim.packages.x86_64-linux.neovim;
@@ -28,6 +32,10 @@
           };
           rose-pine = import ./packages/vimPlugins/rose-pine.nix {
             src = rose-pine-src;
+            pkgs = prev;
+          };
+          bufdelete-nvim = import ./packages/vimPlugins/bufdelete.nix {
+            src = bufdelete-src;
             pkgs = prev;
           };
         };
