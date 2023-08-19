@@ -43,6 +43,8 @@ with pkgs.vimPlugins; [
   no-neck-pain-nvim
   toggleterm-nvim
   rust-tools-nvim
+  leap-nvim
+  flit-nvim
   comment-nvim
   lualine-nvim
   lsp-status-nvim
