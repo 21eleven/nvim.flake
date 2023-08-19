@@ -16,13 +16,16 @@ with pkgs.vimPlugins; [
       p.rust
     ]
   ))
+  vim-repeat
   vim-fugitive
+  gitsigns-nvim
   auto-session
   nvim-web-devicons
   bufferline-nvim
   dracula-nvim
   catppuccin-nvim
   tokyonight-nvim
+  onedark-nvim
   nvim-cmp
   cmp-nvim-lsp
   cmp-buffer
@@ -38,12 +41,14 @@ with pkgs.vimPlugins; [
   plenary-nvim
   nui-nvim
   no-neck-pain-nvim
+  toggleterm-nvim
   rust-tools-nvim
   comment-nvim
   lualine-nvim
   lsp-status-nvim
   telescope-nvim
   rose-pine
+  smart-splits-nvim
   bufdelete-nvim
   harpoon
   nvim-lspconfig
