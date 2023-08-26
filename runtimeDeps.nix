@@ -2,6 +2,8 @@
 with pkgs; [
   ripgrep
   stylua
+  nodejs
+  curl
   lua-language-server
   # nix
   statix

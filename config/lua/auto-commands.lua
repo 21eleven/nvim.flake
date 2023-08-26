@@ -21,3 +21,4 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = {"nix", "lua"},
     command = "setlocal shiftwidth=2 tabstop=2",
 })
+

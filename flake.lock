@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "chatgpt-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692164307,
+        "narHash": "sha256-Mzp0WWND9N9lLZjqWq/4ohxZjrsUwX8tR9qscfgBbZM=",
+        "owner": "21eleven",
+        "repo": "chatgpt.nvim",
+        "rev": "fba5423b3ddf0b67ada2bbb4d5f66d9cf76c996a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "21eleven",
+        "repo": "chatgpt.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1667395993,
@@ -73,6 +89,7 @@
     "root": {
       "inputs": {
         "bufdelete-src": "bufdelete-src",
+        "chatgpt-src": "chatgpt-src",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "rose-pine-src": "rose-pine-src",

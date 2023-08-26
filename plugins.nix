@@ -40,6 +40,7 @@ with pkgs.vimPlugins; [
   neo-tree-nvim
   plenary-nvim
   nui-nvim
+  chatgpt-nvim
   no-neck-pain-nvim
   toggleterm-nvim
   rust-tools-nvim

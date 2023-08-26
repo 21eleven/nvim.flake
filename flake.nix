@@ -20,8 +20,12 @@
       url = "github:21eleven/bufdelete.nvim";
       flake = false;
     };
+    chatgpt-src = {
+      url = "github:21eleven/chatgpt.nvim";
+      flake = false;
+    };
   };
-  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src, bufdelete-src }:
+  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src, bufdelete-src, chatgpt-src }:
     let
       overlayFlakeInputs = prev: final: {
         neovim = neovim.packages.x86_64-linux.neovim;
@@ -36,6 +40,10 @@
           };
           bufdelete-nvim = import ./packages/vimPlugins/bufdelete.nix {
             src = bufdelete-src;
+            pkgs = prev;
+          };
+          chatgpt-nvim = import ./packages/vimPlugins/chatgpt.nix {
+            src = chatgpt-src;
             pkgs = prev;
           };
         };

@@ -26,3 +26,4 @@ vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noselect'
 vim.g.python_host_prog = "python"
 vim.o.background = 'dark'
+vim.o.shell = '/usr/bin/env fish'
