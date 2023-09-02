@@ -6,7 +6,14 @@ local capabilities = {}
 local nvim_lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local rt = require("rust-tools")
-
+require("neodev").setup({
+  override = function(root_dir, library)
+    if root_dir:find("/etc/nixos", 1, true) == 1 then
+      library.enabled = true
+      library.plugins = true
+    end
+  end,
+})
 rt.setup({
 	server = {
 		on_attach = function(_, bufnr)

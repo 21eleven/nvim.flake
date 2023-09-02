@@ -45,6 +45,7 @@ with pkgs.vimPlugins; [
   toggleterm-nvim
   rust-tools-nvim
   leap-nvim
+  neodev-nvim
   flit-nvim
   comment-nvim
   lualine-nvim
