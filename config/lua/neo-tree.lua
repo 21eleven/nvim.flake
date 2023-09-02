@@ -229,4 +229,4 @@ require("neo-tree").setup({
 })
 
 vim.api.nvim_set_keymap("n", "\\", ":Neotree reveal<cr><C-w>l", {desc = "neo tree reveal"})
-vim.api.nvim_set_keymap("n", "<leader>n", ":Neotree toggle<cr>", {desc = "toggle neo tree"})
+vim.api.nvim_set_keymap("n", "<leader>b", ":Neotree toggle<cr>", {desc = "toggle neo tree"})

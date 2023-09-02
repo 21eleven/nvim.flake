@@ -11,7 +11,7 @@ require('flit').setup {
 -- leap-ast?
 -- leap-spooky for text objects?
 vim.keymap.set("n", "<leader>s", ":lua require('leap').leap { target_windows = { vim.fn.win_getid() } }<cr>")
-vim.keymap.set("n", "r", ":lua require('leap').leap { target_windows = { vim.fn.win_getid() } }<cr>")
+vim.keymap.set("n", "sr", ":lua require('leap').leap { target_windows = { vim.fn.win_getid() } }<cr>")
 vim.keymap.set({'n', 'x', 'o'}, 'ss', 'xi')
 vim.keymap.set({'n', 'x', 'o'}, 'sk', '<Plug>(leap-forward-to)')
 vim.keymap.set({'n', 'x', 'o'}, 'sd', '<Plug>(leap-forward-to)')
