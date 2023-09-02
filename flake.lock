@@ -93,7 +93,8 @@
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "rose-pine-src": "rose-pine-src",
-        "telescope-recent-files-src": "telescope-recent-files-src"
+        "telescope-recent-files-src": "telescope-recent-files-src",
+        "ultimate-autopair-src": "ultimate-autopair-src"
       }
     },
     "rose-pine-src": {
@@ -125,6 +126,22 @@
       "original": {
         "owner": "smartpde",
         "repo": "telescope-recent-files",
+        "type": "github"
+      }
+    },
+    "ultimate-autopair-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693677254,
+        "narHash": "sha256-zjkzdPXPmAF7T+jQEC8jwae0WeY4fz7m+H61vU30JDQ=",
+        "owner": "altermo",
+        "repo": "ultimate-autopair.nvim",
+        "rev": "2a8800c28035d00c15373aee2ec73ab4e9a547f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "altermo",
+        "repo": "ultimate-autopair.nvim",
         "type": "github"
       }
     }

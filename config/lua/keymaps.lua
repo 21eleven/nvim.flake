@@ -62,3 +62,10 @@ vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols)
 vim.keymap.set("n", "<leader><leader>f", vim.lsp.buf.format, {desc = "format", noremap = true})
+
+local function descOpt(description)
+  return {desc = description, noremap = true}
+end
+vim.keymap.set("n", "<leader>j", function () require("harpoon.ui").nav_file(1) end, descOpt("nav harpoon buffer 1"))
+vim.keymap.set("n", "<leader>k", function () require("harpoon.ui").nav_file(2) end, descOpt("nav harpoon buffer 2"))
+vim.keymap.set("n", "<leader>l", function () require("harpoon.ui").nav_file(3) end, descOpt("nav harpoon buffer 3"))

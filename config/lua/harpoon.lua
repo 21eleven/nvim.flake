@@ -14,6 +14,6 @@ vim.keymap.set("n", "zl", function () require("harpoon.ui").nav_file(3) end, des
 -- vim.keymap.set("n", "<leader>k", function () require("harpoon.ui").nav_file(2) end)
 -- vim.keymap.set("n", "<leader>l", function () require("harpoon.ui").nav_file(3) end)
 -- i donno why but these keymaps don't get picked up
-vim.keymap.set("n", "<leader>j", function () require("harpoon.ui").nav_file(1) end, descOpt("nav harpoon buffer 1"))
-vim.keymap.set("n", "<leader>k", function () require("harpoon.ui").nav_file(2) end, descOpt("nav harpoon buffer 2"))
-vim.keymap.set("n", "<leader>l", function () require("harpoon.ui").nav_file(3) end, descOpt("nav harpoon buffer 3"))
+-- vim.keymap.set("n", "<leader>j", function () require("harpoon.ui").nav_file(1) end, descOpt("nav harpoon buffer 1"))
+-- vim.keymap.set("n", "<leader>k", function () require("harpoon.ui").nav_file(2) end, descOpt("nav harpoon buffer 2"))
+-- vim.keymap.set("n", "<leader>l", function () require("harpoon.ui").nav_file(3) end, descOpt("nav harpoon buffer 3"))

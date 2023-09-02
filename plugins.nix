@@ -54,6 +54,8 @@ with pkgs.vimPlugins; [
   rose-pine
   smart-splits-nvim
   bufdelete-nvim
+  # ultimate-autopair-nvim # disable as it was causing crashing
+  nvim-autopairs
   harpoon
   nvim-lspconfig
   telescope-recent-files

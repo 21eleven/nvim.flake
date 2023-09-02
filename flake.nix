@@ -24,8 +24,21 @@
       url = "github:21eleven/chatgpt.nvim";
       flake = false;
     };
+    ultimate-autopair-src = {
+      url = "github:altermo/ultimate-autopair.nvim";
+      flake = false;
+    };
   };
-  outputs = { self, nixpkgs, neovim, telescope-recent-files-src, rose-pine-src, bufdelete-src, chatgpt-src }:
+  outputs =
+    { self
+    , nixpkgs
+    , neovim
+    , telescope-recent-files-src
+    , rose-pine-src
+    , bufdelete-src
+    , chatgpt-src
+    , ultimate-autopair-src
+    }:
     let
       overlayFlakeInputs = prev: final: {
         neovim = neovim.packages.x86_64-linux.neovim;
@@ -44,6 +57,10 @@
           };
           chatgpt-nvim = import ./packages/vimPlugins/chatgpt.nix {
             src = chatgpt-src;
+            pkgs = prev;
+          };
+          ultimate-autopair-nvim = import ./packages/vimPlugins/ultimate-autopair.nix {
+            src = ultimate-autopair-src;
             pkgs = prev;
           };
         };

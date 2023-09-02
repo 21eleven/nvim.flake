@@ -46,6 +46,7 @@
 -- Set up nvim-cmp.
 local cmp = require("cmp")
 
+
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -111,3 +112,9 @@ cmp.setup.filetype('markdown', {
     { name = 'emoji', option = { insert = true } },
   }
 })
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
