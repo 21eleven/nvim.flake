@@ -22,11 +22,19 @@ with pkgs.vimPlugins; [
   auto-session
   nvim-web-devicons
   bufferline-nvim
+  # colorschemes
   dracula-nvim
   catppuccin-nvim
   tokyonight-nvim
   onedark-nvim
   oxocarbon-nvim
+  kanagawa-nvim
+  nordic-nvim
+  onenord-nvim
+  # caret-nvim
+  everforest
+  sonokai
+  # /colorschemes
   nvim-cmp
   cmp-nvim-lsp
   cmp-buffer
