@@ -26,6 +26,7 @@ with pkgs.vimPlugins; [
   catppuccin-nvim
   tokyonight-nvim
   onedark-nvim
+  oxocarbon-nvim
   nvim-cmp
   cmp-nvim-lsp
   cmp-buffer
