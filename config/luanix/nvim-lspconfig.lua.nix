@@ -124,6 +124,7 @@ local servers = {
 				workspace = {
 					-- Make the server aware of Neovim runtime files
 					library = { vim.env.VIMRUNTIME },
+          checkThirdParty = false,
 				},
 				-- Do not send telemetry data containing a randomized but unique identifier
 				telemetry = {
