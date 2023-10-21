@@ -69,4 +69,5 @@ with pkgs.vimPlugins; [
   nvim-lspconfig
   telescope-recent-files
   goto-preview
+  nvim-lightbulb
 ]
