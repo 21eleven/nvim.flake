@@ -28,6 +28,8 @@ rt.setup({
 capabilities = vim.tbl_extend("keep", capabilities, cmp_nvim_lsp.default_capabilities())
 
 local lsp_status = require("lsp-status")
+-- TODO configure lsp status more
+-- https://github.com/nvim-lua/lsp-status.nvim
 lsp_status.register_progress()
 -- lsp_status.config {
 --   status_symbol = "",
