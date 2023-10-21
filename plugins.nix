@@ -70,4 +70,5 @@ with pkgs.vimPlugins; [
   telescope-recent-files
   goto-preview
   nvim-lightbulb
+  lean-nvim
 ]

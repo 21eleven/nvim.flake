@@ -48,6 +48,39 @@ capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
 --  },
 -- },
 
+require('lean').setup{
+  lsp = { on_attach = Generic_on_attach},
+  mappings = true,
+}
+
+Generic_on_attach = function(client, bufnr)
+
+			local bufopts = { noremap = true, silent = true, buffer = bufnr }
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+			-- vim.keymap.set("n", ",ar", vim.lsp.buf.rename, bufopts)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+			vim.keymap.set("n", "<leader><leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+			vim.keymap.set("n", "<leader><leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+			vim.keymap.set("n", "<leader><leader>wl", function()
+				vim.inspect(vim.lsp.buf.list_workspace_folders())
+			end, bufopts)
+			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+			vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, bufopts)
+			vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+
+
+			lsp_status.on_attach(client)
+end
+
 local servers = {
 	-- { name = "pyright" },
 	-- {
@@ -149,31 +182,8 @@ for _, server in pairs(servers) do
 		},
 		on_attach = function(client, bufnr)
 			--vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+      Generic_on_attach(client, bufnr)
 
-			local bufopts = { noremap = true, silent = true, buffer = bufnr }
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-			-- vim.keymap.set("n", ",ar", vim.lsp.buf.rename, bufopts)
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-			vim.keymap.set("n", "<leader><leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-			vim.keymap.set("n", "<leader><leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-			vim.keymap.set("n", "<leader><leader>wl", function()
-				vim.inspect(vim.lsp.buf.list_workspace_folders())
-			end, opts)
-			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-			vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
-
-
-			lsp_status.on_attach(client)
 
 			-- if client.server_capabilities.documentSymbolProvider then
 			--   navbuddy.attach(client, bufnr)
