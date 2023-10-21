@@ -68,4 +68,5 @@ with pkgs.vimPlugins; [
   harpoon
   nvim-lspconfig
   telescope-recent-files
+  goto-preview
 ]
