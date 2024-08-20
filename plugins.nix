@@ -40,7 +40,7 @@ with pkgs.vimPlugins; [
   cmp-buffer
   cmp-path
   cmp-cmdline
-  cmp-nvim-ultisnips
+  # cmp-nvim-ultisnips
   cmp-emoji
   cmp_luasnip
   luasnip
@@ -53,6 +53,7 @@ with pkgs.vimPlugins; [
   no-neck-pain-nvim
   toggleterm-nvim
   rust-tools-nvim
+  # ferris-nvim
   leap-nvim
   neodev-nvim
   flit-nvim
