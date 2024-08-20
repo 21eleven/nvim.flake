@@ -25,6 +25,8 @@ wk.register({
 		c = { ":Git commit<cr>", "commit" },
 		s = { ":! git status<cr>", "git status" },
 		d = { ":Gdiffsplit<cr>", "git diff" },
+		b = { ":G blame<cr>", "git blame" },
+		p = { ":G push<cr>", "git push" },
 		m = { ": lua SelectGitModified()<cr>", "select git modified" },
 	},
 }, { prefix = "<leader>" })

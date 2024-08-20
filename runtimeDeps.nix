@@ -12,4 +12,5 @@ with pkgs; [
   # pyright
   nodePackages.typescript
   nodePackages.typescript-language-server
+  nodePackages.pyright
 ]

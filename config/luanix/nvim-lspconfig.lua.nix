@@ -50,7 +50,7 @@ capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
 
 require('lean').setup{
   lsp = { on_attach = Generic_on_attach},
-  mappings = true,
+  -- mappings = true,
 }
 
 Generic_on_attach = function(client, bufnr)
@@ -82,7 +82,20 @@ Generic_on_attach = function(client, bufnr)
 end
 
 local servers = {
-	-- { name = "pyright" },
+	{ name = "pyright",
+    setup = {
+      settings = {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+            venvPath = "/home/noah/gits/gpslocation",
+            venv = "venv"
+          }
+        }
+      }
+    }
+  },
 	-- {
 	--   name = "ltex",
 	--   setup = {

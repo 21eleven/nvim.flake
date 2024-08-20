@@ -2,7 +2,8 @@
   description = "21eleven nvim flake";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs";
+      # url = "github:NixOS/nixpkgs";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     neovim = {
       url = "github:neovim/neovim/stable?dir=contrib";
