@@ -75,7 +75,7 @@ Generic_on_attach = function(client, bufnr)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 			vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, bufopts)
-			vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+			-- vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
 
 
 			lsp_status.on_attach(client)
@@ -124,16 +124,7 @@ local servers = {
 		-- end,
 	},
 	{
-		name = "rnix",
-		on_attach = function(client, bufnr)
-			-- autoformat buffer on save
-			local augroup = vim.api.nvim_create_augroup("rnix autoformat", { clear = true })
-			vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-				buffer = bufnr,
-				group = augroup,
-				command = "lua vim.lsp.buf.format()",
-			})
-		end,
+		name = "nil_ls",
 	},
 	{
 		name = "lua_ls",

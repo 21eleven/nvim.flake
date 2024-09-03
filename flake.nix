@@ -6,7 +6,8 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
+      # url = "github:neovim/neovim/stable?dir=contrib";
+      url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     telescope-recent-files-src = {
@@ -29,6 +30,10 @@
       url = "github:altermo/ultimate-autopair.nvim";
       flake = false;
     };
+    avante-src = {
+      url = "github:yetone/avante.nvim";
+      flake = false;
+    };
   };
   outputs =
     { self
@@ -39,6 +44,7 @@
     , bufdelete-src
     , chatgpt-src
     , ultimate-autopair-src
+    , avante-src
     }:
     let
       overlayFlakeInputs = prev: final: {
@@ -62,6 +68,10 @@
           };
           ultimate-autopair-nvim = import ./packages/vimPlugins/ultimate-autopair.nix {
             src = ultimate-autopair-src;
+            pkgs = prev;
+          };
+          avante-nvim = import ./packages/vimPlugins/avante.nix {
+            src = avante-src;
             pkgs = prev;
           };
         };

@@ -8,28 +8,40 @@ local wk = require("which-key")
 --  * <leader>fe edit file
 -- and hide <leader>1
 
-wk.register({
-	f = {
-		name = "telescope", -- optional group name
-		-- f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-		-- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
-		-- n = { "New File" }, -- just a label. don't create any mapping
-		-- e = "Edit File", -- same as above
-		-- ["1"] = "which_key_ignore",  -- special label to hide it in the popup
-		-- b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
-	},
-	g = {
-		name = "git",
-		w = { ":Gw<cr>", "git add" },
-		g = { ":Gw<cr><esc>:sleep 100m<cr><esc>:Git commit<cr>", "add file and commit" },
-		c = { ":Git commit<cr>", "commit" },
-		s = { ":! git status<cr>", "git status" },
-		d = { ":Gdiffsplit<cr>", "git diff" },
-		b = { ":G blame<cr>", "git blame" },
-		p = { ":G push<cr>", "git push" },
-		m = { ": lua SelectGitModified()<cr>", "select git modified" },
-	},
-}, { prefix = "<leader>" })
+-- wk.register(
+--   {
+--     { "<leader>f", group = "telescope" },
+--     { "<leader>g", group = "git" },
+--     { "<leader>gb", ":G blame<cr>", desc = "git blame" },
+--     { "<leader>gc", ":Git commit<cr>", desc = "commit" },
+--     { "<leader>gd", ":Gdiffsplit<cr>", desc = "git diff" },
+--     { "<leader>gg", ":Gw<cr><esc>:sleep 100m<cr><esc>:Git commit<cr>", desc = "add file and commit" },
+--     { "<leader>gm", ": lua SelectGitModified()<cr>", desc = "select git modified" },
+--     { "<leader>gp", ":G push<cr>", desc = "git push" },
+--     { "<leader>gs", ":! git status<cr>", desc = "git status" },
+--     { "<leader>gw", ":Gw<cr>", desc = "git add" },
+--   })
+-- 	f = {
+-- 		name = "telescope", -- optional group name
+-- 		-- f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+-- 		-- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
+-- 		-- n = { "New File" }, -- just a label. don't create any mapping
+-- 		-- e = "Edit File", -- same as above
+-- 		-- ["1"] = "which_key_ignore",  -- special label to hide it in the popup
+-- 		-- b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
+-- 	},
+-- 	g = {
+-- 		name = "git",
+-- 		w = { ":Gw<cr>", "git add" },
+-- 		g = { ":Gw<cr><esc>:sleep 100m<cr><esc>:Git commit<cr>", "add file and commit" },
+-- 		c = { ":Git commit<cr>", "commit" },
+-- 		s = { ":! git status<cr>", "git status" },
+-- 		d = { ":Gdiffsplit<cr>", "git diff" },
+-- 		b = { ":G blame<cr>", "git blame" },
+-- 		p = { ":G push<cr>", "git push" },
+-- 		m = { ": lua SelectGitModified()<cr>", "select git modified" },
+-- 	},
+-- }, { prefix = "<leader>" })
 
 wk.setup({
 	plugins = {
@@ -51,35 +63,13 @@ wk.setup({
 			g = true, -- bindings for prefixed with g
 		},
 	},
+
 	-- add operators that will trigger motion and text object completion
 	-- to enable all native operators, set the preset / operators plugin above
-	operators = { gc = "Comments" },
-	key_labels = {
-		-- override the label used to display some keys. It doesn't effect WK in any other way.
-		-- For example:
-		-- ["<space>"] = "SPC",
-		-- ["<cr>"] = "RET",
-		-- ["<tab>"] = "TAB",
-	},
-	motions = {
-		count = true,
-	},
 	icons = {
 		breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
 		separator = "➜", -- symbol used between a key and it's label
 		group = "+", -- symbol prepended to a group
-	},
-	popup_mappings = {
-		scroll_down = "<c-d>", -- binding to scroll down inside the popup
-		scroll_up = "<c-u>", -- binding to scroll up inside the popup
-	},
-	window = {
-		border = "none", -- none, single, double, shadow
-		position = "bottom", -- bottom, top
-		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-		padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
-		zindex = 1000, -- positive value to position WhichKey above other floating windows.
 	},
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -87,31 +77,17 @@ wk.setup({
 		spacing = 3, -- spacing between columns
 		align = "left", -- align columns left, center or right
 	},
-	ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
 	show_help = true, -- show a help message in the command line for using WhichKey
 	show_keys = true, -- show the currently pressed key and its label as a message in the command line
-	triggers = "auto", -- automatically setup triggers
+	-- triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specifiy a list manually
 	-- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
-	triggers_nowait = {
-		-- marks
-		"`",
-		"'",
-		"g`",
-		"g'",
-		-- registers
-		'"',
-		"<c-r>",
-		-- spelling
-		"z=",
-	},
-	triggers_blacklist = {
-		-- list of mode / prefixes that should never be hooked by WhichKey
-		-- this is mostly relevant for keymaps that start with a native binding
-		i = { "j", "k" },
-		v = { "j", "k" },
-	},
+	-- triggers_blacklist = {
+	-- 	-- list of mode / prefixes that should never be hooked by WhichKey
+	-- 	-- this is mostly relevant for keymaps that start with a native binding
+	-- 	i = { "j", "k" },
+	-- 	v = { "j", "k" },
+	-- },
 	-- disable the WhichKey popup for certain buf types and file types.
 	-- Disabled by default for Telescope
 	disable = {

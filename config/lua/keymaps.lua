@@ -69,3 +69,12 @@ end
 vim.keymap.set("n", "<leader>j", function () require("harpoon.ui").nav_file(1) end, descOpt("nav harpoon buffer 1"))
 vim.keymap.set("n", "<leader>k", function () require("harpoon.ui").nav_file(2) end, descOpt("nav harpoon buffer 2"))
 vim.keymap.set("n", "<leader>l", function () require("harpoon.ui").nav_file(3) end, descOpt("nav harpoon buffer 3"))
+
+
+vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<cr>")
+vim.keymap.set("n", "<leader>gw", ":Gw<cr>")
+vim.keymap.set("n", "<leader>gg", ":Gw<cr><esc>:sleep 100m<cr><esc>:Git commit<cr>")
+vim.keymap.set("n", "<leader>gc", ":Git commit<cr>")
+vim.keymap.set("n", "<leader>gs", ":! git status<cr>")
+vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<cr>")
+vim.keymap.set("n", "<leader>gm", ": lua SelectGitModified()<cr>")

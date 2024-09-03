@@ -72,4 +72,8 @@ with pkgs.vimPlugins; [
   goto-preview
   nvim-lightbulb
   lean-nvim
+  dressing-nvim
+  nvim-web-devicons
+	avante-nvim
+  # render-markdown-nvim
 ]
