@@ -206,5 +206,10 @@ for _, server in pairs(servers) do
 	end
 
 	nvim_lsp[server.name].setup(setup)
+	nvim_lsp.gleam.setup({
+    cmd = { "gleam", "lsp" },
+    filetypes = { "gleam" },
+    root_dir = require('lspconfig.util').root_pattern("gleam.toml", ".git"),
+})
 end
 ''

@@ -14,6 +14,7 @@ with pkgs.vimPlugins; [
       p.scss
       p.tsx
       p.rust
+      p.gleam
     ]
   ))
   vim-repeat
