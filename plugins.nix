@@ -74,6 +74,6 @@ with pkgs.vimPlugins; [
   lean-nvim
   dressing-nvim
   nvim-web-devicons
-	avante-nvim
+  avante-nvim
   # render-markdown-nvim
 ]
