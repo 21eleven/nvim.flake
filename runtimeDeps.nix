@@ -5,6 +5,8 @@ with pkgs; [
   nodejs
   curl
   lua-language-server
+  jdt-language-server # The Java Language Server
+  jdk # Include a Java Development Kit
   # nix
   statix
   nil

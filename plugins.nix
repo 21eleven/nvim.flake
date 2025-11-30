@@ -69,6 +69,7 @@ with pkgs.vimPlugins; [
   nvim-autopairs
   harpoon
   nvim-lspconfig
+  nvim-jdtls
   telescope-recent-files
   goto-preview
   nvim-lightbulb
